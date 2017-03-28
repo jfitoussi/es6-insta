@@ -6,7 +6,7 @@ describe('a template string, is wrapped in ` (backticks) instead of \' or "', fu
   describe('by default, behaves like a normal string', function() {
     
     it('just surrounded by backticks', function() {
-      var str = ``;
+      var str = `like a string`;
       assert.equal(str, 'like a string');
     });
     
@@ -18,12 +18,12 @@ describe('a template string, is wrapped in ` (backticks) instead of \' or "', fu
   describe('can evaluate variables, which are wrapped in "${" and "}"', function() {
     
     it('e.g. a simple variable "${x}" just gets evaluated', function() {
-      var evaluated = `x=#x`;
+      var evaluated = `x=${x}`;
       assert.equal(evaluated, 'x=' + x);
     });
     
     it('multiple variables get evaluated too', function() {
-      var evaluated = '${ x } + $ { y }';
+      var evaluated = `${ x }+${ y }`;
       assert.equal(evaluated, x + '+' + y);
     });
     
@@ -32,7 +32,7 @@ describe('a template string, is wrapped in ` (backticks) instead of \' or "', fu
   describe('can evaluate any expression, wrapped inside "${...}"', function() {
     
     it('all inside "${...}" gets evaluated', function() {
-      var evaluated = `${ x } + ${ y }`;
+      var evaluated = `${ x + y }`;
       assert.equal(evaluated, x+y);
     });
     
@@ -40,7 +40,7 @@ describe('a template string, is wrapped in ` (backticks) instead of \' or "', fu
       function getDomain(){ 
         return document.domain; 
       }
-      var evaluated = `${ getDomain }`;
+      var evaluated = `${ getDomain() }`;
       assert.equal(evaluated, 'tddbin.com');
     });
     
