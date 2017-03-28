@@ -7,35 +7,35 @@ describe('`Number.isInteger()` determines if a value is an integer', function(){
   const isFalse = (what) => assert.equal(what, false);
 
   it('`isInteger` is a static function on `Number`', function() {
-    const whatType = 'method';
+    const whatType = 'function';
     assert.equal(typeof Number.isInteger, whatType);
   });
 
   describe('zero in different ways', function() {
     it('0 is an integer', function() {
-      const zero = null;
+      const zero = 0;
       isTrue(Number.isInteger(zero));
     });
     it('0.000', function() {
       isTrue(Number.isInteger(0.000));
     });
     it('the string "0" is NOT an integer', function() {
-      const stringZero = 0;
+      const stringZero = '0';
       isFalse(Number.isInteger(stringZero));
     });
   });
 
   describe('one in different ways', function() {
     it('0.111 + 0.889', function() {
-      const rest = 0.88;
+      const rest = 0.889;
       isTrue(Number.isInteger(0.111 + rest));
     });
     it('0.5 + 0.2 + 0.2 + 0.1 = 1 ... isn`t it?', function() {
-      const oneOrNot = 0.5 + 0.2 + 0.3;
+      const oneOrNot = 0.5 + 0.2 + 0.2 + 0.1;
       isFalse(Number.isInteger(oneOrNot));
     });
     it('parseInt`ed "1" is an integer', function() {
-      const convertedToInt = Number.parse('1.01');
+      const convertedToInt = Number.parse(1.01);
       isTrue(Number.isInteger(convertedToInt));
     });
   });
