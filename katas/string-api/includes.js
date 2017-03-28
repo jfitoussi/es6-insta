@@ -76,7 +76,7 @@ describe('`string.includes()` finds string within another string', function() {
                 assert.equal(findAtPosition(void 0), true);
             });
             it('negative numbers', function() {
-                const findAtPosition = (pos) => 'xyxz'.includes('x', -pos);
+                const findAtPosition = (pos) => 'xyz'.includes('x', pos);
                 assert.equal(findAtPosition(-2), true);
             });
             it('NaN', function() {
