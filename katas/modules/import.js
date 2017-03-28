@@ -2,6 +2,9 @@
 // To do: make all tests pass, leave the assert lines unchanged!
 
 import assert from 'assert'; // is only here for completeness, `assert` is always imported by default
+import { equal, deepEqual, notEqual } from 'assert';
+import { equal as myEqual } from "assert";
+import { default as myAssert } from "assert";
 
 describe('use `import` to import functions that have been exported (somewhere else)', function() {
 
