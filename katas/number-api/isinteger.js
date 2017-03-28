@@ -46,7 +46,7 @@ describe('`Number.isInteger()` determines if a value is an integer', function(){
             isTrue(Number.isInteger(numberOne));
         });
         it('`{}` is NOT an integer', function() {
-            const isit = Number.isInteger('a');
+            const isit = Number.isInteger({});
             isFalse(isit);
         });
         it('`0.1` is not an integer', function() {
