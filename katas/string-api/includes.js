@@ -5,29 +5,34 @@ describe('`string.includes()` finds string within another string', function() {
 
   describe('find a single character', function() {
     it('in a three char string', function() {
-      const searchString = 'a';
+      const searchString = 'xyz';
       assert.equal('xyz'.includes(searchString), true);
     });
     it('reports false if character was not found', function() {
-      const expected = '???';
+      const expected = '';
       assert.equal('xyz'.includes('abc'), expected);
     });
   });
   
   describe('find a string', function() {
     it('that matches exactly', function() {
-      const findSome = findMe => 'xyz'.includes;
+      //const findSome = findMe => 'xyz'.includes();
+      const findSome = findMe => 'xyz'.includes(findMe);
       assert.equal(findSome('xyz'), true);
     });
   });
   
   describe('search for an empty string, is always true', function() {
     it('in an empty string', function() {
-      const emptyString = ' ';
+      const emptyString = '';
       assert.equal(''.includes(emptyString), true);
     });
     it('in `abc`', function() {
-      const actual = _.includes('');
+      
+      //const actual = _.includes('');
+     
+      const actual = 
+      
       assert.equal(actual, true);
     });
   });
