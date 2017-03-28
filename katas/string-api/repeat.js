@@ -54,11 +54,10 @@ describe('`str.repeat(x)` appends `x` copies of `str` to each other and returns 
       assert.equal(String(new MyString()).repeat(1), expectedString);
     });
     it('`toString()` is only called once', function() {
-      var counter = 0;
+      let counter = 1;
       class X {
-        counter=counter++
         toString() {
-          return counter;
+          return counter++;
         }
       }
       
