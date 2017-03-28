@@ -7,15 +7,15 @@ describe('`str.startsWith(searchString)` determines whether `str` begins with `s
 
   describe('1st parameter, the string to search for', function() {
     it('works with just a character', function() {
-      const actual = s.starts_with('t');
+      const actual = s.startsWith('t');
       assert.equal(actual, true);
     });
     it('works with a string', function() {
-      const expected = '???';
+      const expected = true;
       assert.equal(s.startsWith('the'), expected);
     });
     it('works with unicode characters', function() {
-      const nuclear = 'NO ☢ NO';
+      const nuclear = '☢ NO ☢ NO';
       assert.equal(nuclear.startsWith('☢'), true);
     });
     it('a regular expression throws a TypeError', function() {
