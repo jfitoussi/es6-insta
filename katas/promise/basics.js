@@ -4,19 +4,19 @@
 describe('a Promise represents an operation that hasn`t completed yet, but is expected in the future', function() {
 
   it('`Promise` is a global function', function() {
-    const expectedType = '???';
+    const expectedType = 'function';
     assert.equal(typeof Promise, expectedType);
   });
 
   describe('the constructor', function() {
   
     it('instantiating it without params throws', function() {
-      const fn = () => { Promise }
+      const fn = () => { new Promise()}
       assert.throws(fn);
     });  
     
     it('expects a function as parameter', function() {
-      const param = null;
+      const param = () => 1;
       assert.doesNotThrow(() => { new Promise(param); });
     });  
     
@@ -26,6 +26,7 @@ describe('a Promise represents an operation that hasn`t completed yet, but is ex
   
     it('resolve a promise by calling the `resolve` function given as first parameter', function(done) {
       let promise = new Promise((resolve) => {
+        done()
       });
       
       promise
