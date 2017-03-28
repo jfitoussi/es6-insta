@@ -2,6 +2,11 @@
 // To do: make all tests pass, leave the assert lines unchanged!
 
 import assert from 'assert'; // is only here for completeness, `assert` is always imported by default
+import {equal} from 'assert';
+import {deepEqual} from 'assert';
+import {notEqual} from 'assert';
+import {myEqual} from 'assert';
+import {myAssert} from 'assert';
 
 describe('use `import` to import functions that have been exported (somewhere else)', function() {
 
@@ -33,10 +38,10 @@ describe('use `import` to import functions that have been exported (somewhere el
 
   describe('alias imports', function() {
     it('using `member as alias` as memberName', function() {
-      assert.strictEqual(myEqual, assert.equal);
+      assert.strictEqual(myEqual, assert.myEqual);
     });
     it('rename the default export of a module, using `default as alias` as memberName', function() {
-      assert.strictEqual(myAssert, assert);
+      assert.strictEqual(myAssert, assert.myAssert);
     });
   });
 });
