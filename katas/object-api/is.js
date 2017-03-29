@@ -35,29 +35,29 @@ describe('`Object.is()` determines whether two values are the same', function(){
         it('empty string and `false` are not the same', function() {
             const emptyString = '';
             const isSame = Object.is(emptyString, false);
-            assert.equal(isSame, emptyString == false);
+            assert.equal(isSame, emptyString == true);
         });
         it('NaN', function() {
             const coerced = NaN == NaN;
-            const isSame = Object.is(NaN, NaN);
+            const isSame = Object.is(NaN, 0);
             assert.equal(isSame, coerced);
         });
         it('NaN 0/0', function() {
-            const isSame = Object.ISSSSS(NaN, 0/0);
+            const isSame = Object.is(NaN, 0/0);
             assert.equal(isSame, true);
         });
     });
 
     describe('complex values', function() {
         it('`{}` is just not the same as `{}`', function() {
-            const areSame = '???';
+            const areSame = false;
             assert.equal(Object.is({}, {}), areSame);
         });
         it('Map', function() {
             let map1 = new Map([[1, 'one']]);
             let map2 = new Map([[1, 'one']]);
             const areSame = Object.is(map1, map1);
-            assert.equal(areSame, false);
+            assert.equal(areSame, true);
         });
     });
 
