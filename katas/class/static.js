@@ -5,7 +5,7 @@ describe('inside a class you can use the `static` keyword', () => {
 
   describe('for methods', () => {
     
-    class IntegrationTest {}
+    class IntegrationTest {} 
     class UnitTest {}
     
     it('a static method just has the prefix `static`', () => {
