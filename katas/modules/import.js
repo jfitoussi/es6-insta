@@ -1,18 +1,16 @@
 // 61: modules - import
 // To do: make all tests pass, leave the assert lines unchanged!
 
-import assert from 'assert'; // is only here for completeness, `assert` is always imported by default
-
+import assert from 'assert';
+import { equal, deepEqual, notEqual } from "assert";
+import { equal as myEqual, default as myAssert } from "assert";
 describe('use `import` to import functions that have been exported (somewhere else)', function() {
-
   describe('the import statement', function() {
     it('is only allowed on the root level', function() {
-      // try to comment this out, it will yell at you :)
-      // import assert from 'assert';
+
     });
 
     it('import an entire module using `import <name> from "<moduleName>"`', function() {
-      // this can't fail, since `assert` is imported by default
       assert.equal(typeof assert, 'function');
     });
   });
