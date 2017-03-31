@@ -7,11 +7,13 @@ describe('`const` is like `let` plus read-only', () => {
 
     it('number', () => {
       const constNum = 0;
+      //constNum = 1;
       assert.equal(constNum, 0);
     });
 
     it('string', () => {
       const constString = 'I am a const';
+      //constString = 'Cant change you?';
       assert.equal(constString, 'I am a const');
     });
 
@@ -36,7 +38,7 @@ describe('`const` is like `let` plus read-only', () => {
       obj.x = 3;
       assert.equal(obj.x, 3);
     });
-    
+
   });
 
 });
